@@ -1,0 +1,19 @@
+{
+  "name": "shelfie-server",
+  "version": "1.0.0",
+  "description": "server for shelfie.cd project",
+  "main": "server/index.js",
+  "proxy": "http://localhost:6969"
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "console.log('hello world')"
+  },
+  "author": "",
+  "license": "ISC"
+}
