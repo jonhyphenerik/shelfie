@@ -19,7 +19,7 @@ class Form extends Component {
     //posts product from inputs to db
     submitHandler(){}; 
 
-    clearHandler(){e => this.getElementByTagName('input').value = ''}
+    cancelHandler(){e => this.getElementByTagName('input').value = ''}
 
     render() { 
         return ( 
@@ -27,8 +27,8 @@ class Form extends Component {
             <input id="productName" onChange={productNameHandler}/>
             <input id="price" onChange={priceHandler}/>
             <input id="imageUrl" onChange={imageUrlHandler}/>
-            <button id='submit' onClick={submitHandler}>submit</button>
-            <button id='clear' onClick={clearHandler}>clear</button>
+            <button id='submit' onClick={submitHandler}>+ to Inventory</button>
+            <button id='cancel' onClick={cancelHandler}>cancel</button>
         </div> 
         )
     }

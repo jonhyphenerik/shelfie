@@ -15,7 +15,7 @@ class App extends Component {
         return ( 
         <div>
             <Header />
-            <Dashboard />
+            <Dashboard inventory={this.}/>
             <Form />
             <Product />
         </div> 
