@@ -1,19 +1,28 @@
-// load express framework and body-parser helper
+// load express framework
 const express = require("express"),
-    bodyParser = require("body-parser"),
 
-//create express instance to serve end points
+    // load massive and dotenv
+    massive = require("massive"),
+    dotenv = require("dotenv").config(),
+
+    // set port and hostname
+    port = 6969,
+    hostname = "http://localhost:6969",
+
+    //create express instance to serve end points
     app = express(),
 
-//load node's filesystem helper library
-    fs = require("fs");
+    //load node's filesystem helper library
+    fs = require("fs"),
 
-//configure express app to user body-parser for JSON data
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}));
+    //listen on port and respond
+    server = app.listen(port, ()=>{console.log(`listening on port ${port}`)}),
 
-//route handler
-const routes = require("./routes/routes.js")(app, fs);
+    //destructure vars from .env
+    {SERVER_PORT, CONNECTION_STRING} = process.env;
 
-
-const server = app.listen(3001, ()=>{console.log("listening on port %s...", server.address().port)})
+    //set up db in heroku using massive and vars from .env
+    massive({
+        connectionString: CONNECTION_STRING,
+        ssl: {rejectUnauthorized: false}
+    });

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
-class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
-    }
-    render() { 
-        return ( <div>Dashboard</div> );
-    }
+const Dashboard = () => {
+    return ( 
+    <div>
+        {/* pass inventory from state object to divs with product templates */}
+    </div> 
+    );
 }
  
 export default Dashboard;
